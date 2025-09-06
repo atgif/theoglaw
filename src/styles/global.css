@@ -17,4 +17,21 @@
   font-size: 1.8rem;
   color: #a00000; /* red accent */
 }
-
+.payment-page {
+  padding: 2rem;
+  text-align: center;
+}
+.pay-button {
+  background-color: #a00000;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
