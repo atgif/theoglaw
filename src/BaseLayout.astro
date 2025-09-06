@@ -1,0 +1,20 @@
+---
+// src/layouts/BaseLayout.astro
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The OG Law</title>
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
