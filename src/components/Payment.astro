@@ -1,0 +1,11 @@
+---
+// src/components/Payment.astro
+---
+
+<section class="payment">
+  <h2>Consultation Payment</h2>
+  <p>Consultations are $99/hour. Please complete payment to proceed.</p>
+  <form action="/create-checkout-session" method="POST">
+    <button type="submit">Pay Now</button>
+  </form>
+</section>
