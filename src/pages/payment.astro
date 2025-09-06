@@ -1,0 +1,17 @@
+---
+// src/pages/payment.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <section class="payment-page">
+    <h1>Consultation Payment</h1>
+    <p>All consultations are billed at $99/hour. Please complete payment to proceed with scheduling.</p>
+
+    <form action="https://buy.stripe.com/test_4gwcNw3gXgVZ9gM4gg" method="GET">
+      <button type="submit" class="pay-button">Pay Now</button>
+    </form>
+
+    <p class="note">After payment, you’ll be redirected to book your consultation via Calendly.</p>
+  </section>
+</BaseLayout>
