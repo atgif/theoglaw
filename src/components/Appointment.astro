@@ -1,13 +1,24 @@
 ---
-// src/components/Appointment.astro
+// src/pages/appointment.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<section class="appointment">
-  <h2>Book Your Consultation</h2>
-  <iframe
-    src="https://calendly.com/olenagann/30min"
-    width="100%"
-    height="600"
-    frameborder="0"
-  ></iframe>
-</section>
+<BaseLayout>
+  <section class="appointment-page">
+    <div class="confirmation">
+      <h1>Thank You for Your Payment</h1>
+      <p>Your consultation payment has been received. Please use the calendar below to schedule your appointment.</p>
+      <p>You’ll receive a confirmation email with the meeting details after booking.</p>
+    </div>
+
+    <div class="calendar">
+      <iframe
+        src="https://calendly.com/olenagann/30min"
+        width="100%"
+        height="600"
+        frameborder="0"
+        style="border: none; border-radius: 8px;"
+      ></iframe>
+    </div>
+  </section>
+</BaseLayout>
