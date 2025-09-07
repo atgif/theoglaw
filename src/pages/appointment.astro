@@ -4,15 +4,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-  <section class="appointment">
-    <h1>Book Your Consultation</h1>
-    <p>Thank you for your payment. Please use the calendar below to schedule your consultation.</p>
+  <section class="appointment-page">
+    <div class="confirmation">
+      <h1>Thank You for Your Payment</h1>
+      <p>Your consultation payment has been received. Please use the calendar below to schedule your appointment.</p>
+      <p>You’ll receive a confirmation email with the meeting details after booking.</p>
+    </div>
 
-    <iframe
-      src="https://calendly.com/olenagann/30min"
-      width="100%"
-      height="600"
-      frameborder="0"
-    ></iframe>
+    <div class="calendar">
+      <iframe
+        id="calendly-frame"
+        src="https://calendly.com/olenagann/30min"
+        width="100%"
+        height="600"
+        frameborder="0"
+        style="border: none; border-radius: 8px;"
+        onerror="document.getElementById('calendly-fallback').style.display = 'block';"
+      ></iframe>
+    </div>
+
+    <div id="calendly-fallback" style="display: none; margin-top: 2rem;">
+      <p>⚠️ We couldn’t load the calendar. You can still book your consultation directly:</p>
+      <a href="https://calendly.com/olenagann/30min" target="_blank" class="fallback-button">Open Calendly</a>
+    </div>
   </section>
+
+  <script>
+    // Extra fallback in case iframe silently fails
+    setTimeout(() => {
+      const iframe = document.getElementById('calendly-frame');
+      if (!iframe || iframe.clientHeight === 0) {
+        document.getElementById('calendly-fallback').style.display = 'block';
+      }
+    }, 3000);
+  </script>
 </BaseLayout>
