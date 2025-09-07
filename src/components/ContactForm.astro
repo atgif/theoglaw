@@ -1,0 +1,58 @@
+---
+// components/ContactForm.astro
+---
+
+<section class="contact-form">
+  <h2>Contact Us</h2>
+  <p>If you have questions or would like to request a consultation, please fill out the form below.</p>
+
+  <form
+    name="contact"
+    method="POST"
+    action="https://formspree.io/f/YOUR_FORM_ID"
+    onsubmit="return handleSubmit(event)"
+  >
+    <input type="hidden" name="_captcha" value="false" />
+    <label>
+      Name:
+      <input type="text" name="name" required />
+    </label>
+    <label>
+      Email:
+      <input type="email" name="email" required />
+    </label>
+    <label>
+      Message:
+      <textarea name="message" required></textarea>
+    </label>
+    <button type="submit">Send</button>
+  </form>
+
+  <div id="form-fallback" style="display: none; margin-top: 1rem;">
+    <p>⚠️ Something went wrong. You can email us directly at <a href="mailto:olena@theoglaw.com">olena@theoglaw.com</a>.</p>
+  </div>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          alert('Message sent successfully!');
+          form.reset();
+        } else {
+          document.getElementById('form-fallback').style.display = 'block';
+        }
+      })
+      .catch(() => {
+        document.getElementById('form-fallback').style.display = 'block';
+      });
+      return false;
+    }
+  </script>
+</section>
