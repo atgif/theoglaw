@@ -1,11 +1,15 @@
 ---
-// src/components/Payment.astro
+// src/pages/payment.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<section class="payment">
-  <h2>Consultation Payment</h2>
-  <p>Consultations are $99/hour. Please complete payment to proceed.</p>
-  <form action="/create-checkout-session" method="POST">
-    <button type="submit">Pay Now</button>
-  </form>
-</section>
+<BaseLayout>
+  <section class="payment-page">
+    <h1>Consultation Payment</h1>
+    <p>Consultations are $99/30 min. Please complete payment to proceed.</p>
+
+    <a href="https://buy.stripe.com/test_abc123XYZ" class="pay-button">Pay Now</a>
+
+    <p class="note">After payment, you’ll be redirected to book your consultation via Calendly.</p>
+  </section>
+</BaseLayout>
