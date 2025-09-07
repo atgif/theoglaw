@@ -6,8 +6,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout>
   <section class="payment-page">
     <h1>Consultation Payment</h1>
-    <p>All consultations are billed at $99/30 min. Please complete payment to proceed with scheduling.</p>
-    <a href="https://buy.stripe.com/test_abc123XYZ" class="pay-button">Pay Now</a>
-    <p class="note">After payment, you’ll be redirected to book your consultation via Calendly.</p>
+    <p>Consultations are $99/30 min. Please complete the payment to proceed.</p>
+
+    <button id="pay-button">Pay Now</button>
+
+    <div id="payment-fallback" style="display: none; margin-top: 1rem;">
+      <p>⚠️ Payment link failed to load. You can pay directly using this link:</p>
+      <a href="https://buy.stripe.com/test_abc123XYZ" target="_blank" class="fallback-button">Open Stripe Checkout</a>
+    </div>
+
+    <script>
+      document.getElementById('pay-button').addEventListener('click', () => {
+        try {
+          window.location.href = "https://buy.stripe.com/test_abc123XYZ";
+        } catch {
+          document.getElementById('payment-fallback').style.display = 'block';
+        }
+      });
+    </script>
   </section>
 </BaseLayout>
