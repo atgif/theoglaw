@@ -84,3 +84,33 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f5e9e0;
+}
+
+.nav-logo img {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #a00000;
+  font-weight: bold;
+}
+
+.nav-links .cta {
+  background-color: #a00000;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
