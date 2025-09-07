@@ -6,12 +6,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout>
   <section class="payment-page">
     <h1>Consultation Payment</h1>
-    <p>All consultations are billed at $99/hour. Please complete payment to proceed with scheduling.</p>
-
-    <form action="https://buy.stripe.com/test_4gwcNw3gXgVZ9gM4gg" method="GET">
-      <button type="submit" class="pay-button">Pay Now</button>
-    </form>
-
+    <p>All consultations are billed at $99/30 min. Please complete payment to proceed with scheduling.</p>
+    <a href="https://buy.stripe.com/test_abc123XYZ" class="pay-button">Pay Now</a>
     <p class="note">After payment, you’ll be redirected to book your consultation via Calendly.</p>
   </section>
 </BaseLayout>
