@@ -8,10 +8,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="confirmation">
       <h1>Thank You for Your Payment</h1>
       <p>Your consultation payment has been received. Please use the calendar below to schedule your appointment.</p>
-      <p>You’ll receive a confirmation email with the meeting details after booking.</p>
     </div>
 
-    <div class="calendar">
+    <div id="spinner" class="spinner"></div>
+
+    <div class="calendar" style="display: none;" id="calendly-container">
       <iframe
         id="calendly-frame"
         src="https://calendly.com/olenagann/30min"
@@ -19,7 +20,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         height="600"
         frameborder="0"
         style="border: none; border-radius: 8px;"
-        onerror="document.getElementById('calendly-fallback').style.display = 'block';"
+        onload="document.getElementById('spinner').style.display='none'; document.getElementById('calendly-container').style.display='block';"
       ></iframe>
     </div>
 
@@ -27,15 +28,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p>⚠️ We couldn’t load the calendar. You can still book your consultation directly:</p>
       <a href="https://calendly.com/olenagann/30min" target="_blank" class="fallback-button">Open Calendly</a>
     </div>
-  </section>
 
-  <script>
-    // Extra fallback in case iframe silently fails
-    setTimeout(() => {
-      const iframe = document.getElementById('calendly-frame');
-      if (!iframe || iframe.clientHeight === 0) {
-        document.getElementById('calendly-fallback').style.display = 'block';
-      }
-    }, 3000);
-  </script>
+    <script>
+      setTimeout(() => {
+        const iframe = document.getElementById('calendly-frame');
+        if (!iframe || iframe.clientHeight === 0) {
+          document.getElementById('spinner').style.display = 'none';
+          document.getElementById('calendly-fallback').style.display = 'block';
+        }
+      }, 5000);
+    </script>
+  </section>
 </BaseLayout>
