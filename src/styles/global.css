@@ -21,7 +21,7 @@
 }
 .logo {
   max-width: 200px;
-  height: 50px;
+  height: 60px;
   margin-bottom: 1rem;
 }
 
@@ -200,10 +200,6 @@ nav .cta {
   display: flex;
   align-items: center;
   gap: 2rem;
-}
-
-.logo {
-  height: 60px;
 }
 
 .intro-text {
