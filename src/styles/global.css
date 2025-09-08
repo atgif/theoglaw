@@ -253,3 +253,32 @@ nav .cta {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.nav-links {
+  display: flex;
+  justify-content: space-between; /* spreads items evenly */
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%; /* ensures full horizontal space */
+}
+
+.nav-links li {
+  flex: 1; /* each item takes equal space */
+  text-align: center;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #a00000;
+  font-weight: bold;
+}
+
+.nav-links .cta {
+  background-color: #a00000;
+  color: white;
+  border-radius: 6px;
+}
+
