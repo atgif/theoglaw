@@ -3,25 +3,29 @@
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background-color: #f5e9e0;
-  border-bottom: 1px solid black; /* thin black line under menu */
-}
-
-.nav-logo {
-  flex-shrink: 0;
+  border-bottom: 1px solid black;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-links {
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
-  margin-left: 2rem;
   list-style: none;
+  margin: 0;
   padding: 0;
 }
 
@@ -42,6 +46,10 @@
   background-color: #a00000;
   color: white;
   border-radius: 6px;
+}
+
+.nav-logo {
+  flex-shrink: 0;
 }
 
 .hero {
