@@ -1,20 +1,50 @@
 ---
-// src/layouts/BaseLayout.astro
-import Nav from '../components/Nav.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
----
 
+export interface Props {
+  title: string;
+  description: string;
+  permalink: string;
+  current?: string;
+}
+const { title, description, permalink, current } = Astro.props;
+---
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>The OG Law</title>
-    <link rel="stylesheet" href="/styles/global.css" />
-  </head>
-  <body>
-    <Nav />
+<head>
+  <BaseHead title={title} description={description} permalink={permalink} />
+</head>
+<body>
+  <div class="layout">
+    <Header current={current} />
+
     <main>
       <slot />
     </main>
+
     <Footer />
-  </body>
+  </div>
+</body>
 </html>
+
+<style>
+  .layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 1em 2em;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+</style>
