@@ -1,11 +1,98 @@
 ---
 // src/pages/index.astro
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'The OG Law office - business attorney';
+const description = 'Legal compass for your business growth';
+const permalink = Astro.site.href;
 ---
 
-<BaseLayout>
-  <section class="homepage">
-    <hr class="divider" />
-    <img src="/portrait.png" alt="Olena Gannochchenko" class="portrait" />
-  </section>
+<BaseLayout title={title} description={description} permalink={permalink}>
+  <div class="home-container">
+    <div class="home-copy">
+      <h1>Legal compass for your business growth!</h1>
+      <p>Whether you're just starting out or scaling up, I’m here to help you navigate the legal landscape with clarity and confidence.</p>
+    </div>
+
+    <div class="hero-image-container">
+      <picture>
+        <source srcset="/portrait.png" media="(min-width: 600px)">
+        <img class="hero-image" alt="portrait of Olena Gannochchenko" src="/assets/home-illustration-small.webp" width="550" height="466">
+      </picture>
+      <p class="caption">
+         Illustration by TheOGLaw
+      </p>
+    </div>
+  </div>
 </BaseLayout>
+
+<style>
+  .home-container {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin: 2em 0;
+    min-height: 400px;
+  }
+
+  .home-copy {
+    flex: 1;
+    padding: 0 1em;
+  }
+
+  .home-copy h1 {
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+  }
+
+  .home-copy p {
+    font-size: 1.4em;
+  }
+
+  .hero-image-container {
+    margin: 0 1em;
+    text-align: center;
+  }
+
+  .hero-image-container picture {
+    display: block;
+    min-height: 250px;
+  }
+
+  .caption {
+    font-size: .8em;
+    font-style: italic;
+    text-align: left;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 550px;
+    margin-bottom: 1em;
+  }
+
+  @media (max-width: 1200px) {
+    p {
+      font-size: 1.2em;
+    }
+
+    .hero-image {
+      max-width: 400px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .home-container {
+      flex-direction: column;
+    }
+
+    .home-copy {
+      flex: 0;
+      padding-bottom: 2em;
+      text-align: center;
+    }
+  }
+</style>
