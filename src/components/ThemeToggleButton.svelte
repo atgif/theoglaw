@@ -20,10 +20,7 @@
     }
   }
 
-  const icons = [
-    'sun', // light theme
-    'moon' // dark theme
-  ];
+  const icons = ['sun', 'moon']; // light and dark theme icons
 </script>
 
 <div class="theme-toggle">
