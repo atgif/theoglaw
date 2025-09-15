@@ -19,7 +19,6 @@
     "typescript": "5.7.2"
   },
   "devDependencies": {
-    "@astrojs/adapter-static": "3.2.0",
     "@cloudflare/workers-types": "^4.20250204.0",
     "wrangler": "3.107.3",
     "astro": "^5.1.3"
