@@ -1,9 +1,7 @@
 ---
-//import Layout from '../layouts/BlogPost.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-import Layout from '../layouts/BaseLayout.astro';
-
-<Layout title="About Me" description="My background and education" pubDate={new Date('September 15 2025')} heroImage="/portrait.png">
+<BaseLayout title="About Me" description="My background and education" pubDate={new Date('September 15 2025')} heroImage="/portrait.png">
 	<p>
 		Hi, I’m Olena Gannochenko—a business and transactional attorney based in Fort Bend County. 
 I opened my private practice in 2022 after nearly two decades serving as in-house counsel and General Counsel
@@ -43,4 +41,4 @@ St. Basil Greek Orthodox Church – Children’s Sunday School Teacher
 Houston Volunteer Lawyers – Attorney Volunteer
 
 	</p>
-</Layout>
+</BaseLayout>
