@@ -1,10 +1,9 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-import svelte from '@astrojs/svelte';
-import mdx from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
+import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
+
 export default defineConfig({
-  site: "https://theoglaw.com",
+  site: 'https://theoglaw.com',
   output: 'static',
-  integrations: [svelte(), mdx(), sitemap()]
+  integrations: [mdx(), sitemap()]
 });
