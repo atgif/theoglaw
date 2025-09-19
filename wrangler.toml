@@ -1,0 +1,5 @@
+name = "theoglawstaticpages"
+compatibility_date = "2025-09-19"
+
+# This tells Wrangler the directory to deploy for Cloudflare Pages
+pages_build_output_dir = "dist"
