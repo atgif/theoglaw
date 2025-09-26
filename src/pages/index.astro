@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ServiceTiles from '../components/ServiceTiles.astro';
 
 const title = 'The OG Law office - Olena Gannochenko business attorney';
 const description = 'Legal compass for your business growth';
@@ -20,9 +19,22 @@ const permalink = Astro.site.href;
         <img class="hero-image" alt="portrait of Olena Gannochchenko" src="/portrait.png" width="550" height="466">
       </picture>
       <p class="caption">
-         Olena Gannochenko,  business and transactional attorney in Fort Bend County, TX  
+         Olena Gannochenko,  your Texas business and transactional attorney  
       </p>
     </div>
+<section class="services">
+  <h2>Legal Services Tailored for Your Business</h2>
+  <ul class="service-list">
+    <li>Start your business with confidence</li>
+    <li>Stay compliant with licensing & regulations</li>
+    <li>Draft and review contracts that protect you</li>
+    <li>Navigate mergers, acquisitions & sales</li>
+    <li>Secure your brand with trademark protection</li>
+    <li>Resolve disputes with strategic legal support</li>
+  </ul>
+  <a href="/payment" class="cta">Schedule a Consultation</a>
+</section>
+
   </div>
 </BaseLayout>
 
